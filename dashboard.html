@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pénitentia - Tableau de bord</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        // Vérification de la connexion
+        if (!localStorage.getItem('isLoggedIn')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.png" alt="Logo Pénitentia" height="65">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="dashboard.html">Tableau de bord</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="detainee_management.html">Gestion des détenus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user_management.html">Gestion des utilisateurs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reporting.html">Rapports et Exportation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Déconnexion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h1 class="mb-4">Tableau de bord principal</h1>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card text-white bg-primary mb-3">
+                    <div class="card-header">Détenus Actuels</div>
+                    <div class="card-body">
+                        <h5 class="card-title">8,000+</h5>
+                        <p class="card-text">Nombre total de détenus à la Prison Centrale de Makala.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-white bg-success mb-3">
+                    <div class="card-header">Nouvelles Entrées (24h)</div>
+                    <div class="card-body">
+                        <h5 class="card-title">15</h5>
+                        <p class="card-text">Nouveaux détenus enregistrés aujourd'hui.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-white bg-warning mb-3">
+                    <div class="card-header">Libérations Prévues (7j)</div>
+                    <div class="card-body">
+                        <h5 class="card-title">7</h5>
+                        <p class="card-text">Détenus dont la libération est prévue cette semaine.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header">Alertes et Notifications</div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-danger">Dossier #12345: Informations manquantes.</li>
+                            <li class="list-group-item list-group-item-warning">Détenu Jean Dupont: Date de jugement à vérifier.</li>
+                            <li class="list-group-item list-group-item-info">Nouveau transfert de la prison de Kasapa.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accès rapide aux modules clés -->
+        <div class="row mb-4">
+            <div class="col-md-4 mb-3">
+                <a href="visit_management.html" class="text-decoration-none">
+                    <div class="card h-100 shadow-sm border-primary">
+                        <div class="card-body text-center">
+                            <i class="fas fa-user-friends fa-2x mb-2 text-primary"></i>
+                            <h5 class="card-title">Gestion des Visites</h5>
+                            <p class="card-text">Planifier et consulter les visites des détenus.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-3">
+                <a href="medical_records.html" class="text-decoration-none">
+                    <div class="card h-100 shadow-sm border-success">
+                        <div class="card-body text-center">
+                            <i class="fas fa-notes-medical fa-2x mb-2 text-success"></i>
+                            <h5 class="card-title">Dossiers Médicaux</h5>
+                            <p class="card-text">Consulter et enregistrer les consultations médicales.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-3">
+                <a href="incident_reports.html" class="text-decoration-none">
+                    <div class="card h-100 shadow-sm border-danger">
+                        <div class="card-body text-center">
+                            <i class="fas fa-exclamation-triangle fa-2x mb-2 text-danger"></i>
+                            <h5 class="card-title">Rapports d'Incidents</h5>
+                            <p class="card-text">Déclarer et suivre les incidents survenus.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- Fin accès rapide -->
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2023 Pénitentia. Tous droits réservés.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #343a40; /* Dark gray for text */
+}
+
+.bg-dark {
+    background-color: #1a2c3a !important; /* Dark blue from logo */
+}
+
+.btn-primary {
+    background-color: #1a2c3a; /* Dark blue from logo */
+    border-color: #1a2c3a;
+}
+
+.btn-primary:hover {
+    background-color: #2a4b67; /* Slightly lighter blue on hover */
+    border-color: #2a4b67;
+}
+
+.card-title {
+    color: #1a2c3a; /* Dark blue for card titles */
+}
+
+/* Adjustments for login page */
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+.card {
+    border: none;
+    border-radius: 0.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #1a2c3a 0%, #2a4b67 100%);
+    padding: 100px 0;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+/* Features Section */
+.features-section .card {
+    transition: transform 0.3s ease;
+}
+
+.features-section .card:hover {
+    transform: translateY(-5px);
+}
+
+/* About Section */
+.about-section {
+    background-color: #f8f9fa;
+}
+
+/* Contact Section */
+.contact-section .form-control {
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+}
+
+/* Footer */
+footer {
+    background-color: #1a2c3a;
+}
+
+footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #2a4b67 !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Animation */
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

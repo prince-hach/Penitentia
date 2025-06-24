@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossiers Médicaux - Pénitentia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.png" alt="Logo Pénitentia" height="65">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Tableau de bord</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="detainee_management.html">Détenus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cell_management.html">Cellules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="visit_management.html">Visites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="medical_records.html">Médical</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="incident_reports.html">Incidents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user_management.html">Utilisateurs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reporting.html">Rapports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Déconnexion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Dossiers Médicaux</h2>
+        
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Nouvelle Consultation</h5>
+                        <form id="addMedicalRecordForm">
+                            <div class="mb-3">
+                                <label for="detaineeId" class="form-label">Détenu</label>
+                                <select class="form-select" id="detaineeId" required>
+                                    <option value="">Sélectionner un détenu</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="consultationDate" class="form-label">Date de Consultation</label>
+                                <input type="datetime-local" class="form-control" id="consultationDate" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="doctorName" class="form-label">Médecin</label>
+                                <input type="text" class="form-control" id="doctorName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="diagnosis" class="form-label">Diagnostic</label>
+                                <textarea class="form-control" id="diagnosis" rows="3" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="prescription" class="form-label">Prescription</label>
+                                <textarea class="form-control" id="prescription" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nextAppointment" class="form-label">Prochain Rendez-vous</label>
+                                <input type="datetime-local" class="form-control" id="nextAppointment">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Historique Médical</h5>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Détenu</th>
+                                        <th>Médecin</th>
+                                        <th>Diagnostic</th>
+                                        <th>Prescription</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="medicalRecordsList">
+                                    <!-- Les dossiers médicaux seront ajoutés dynamiquement ici -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Statistiques Médicales</h5>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="stat-card">
+                                    <h6>Consultations Aujourd'hui</h6>
+                                    <p class="stat-number">8</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stat-card">
+                                    <h6>Consultations en Attente</h6>
+                                    <p class="stat-number">5</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stat-card">
+                                    <h6>Cas Urgents</h6>
+                                    <p class="stat-number">2</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stat-card">
+                                    <h6>Médicaments Prescrits</h6>
+                                    <p class="stat-number">12</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
